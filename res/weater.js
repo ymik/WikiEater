@@ -77,7 +77,7 @@ jQuery(document).ready(function () { // wikieater egg by ymik
                 this.setCursor(4, x, y);
                 window.setTimeout(callback, 2 * this.spriteCycle);
 
-                $('<audio class="' + this.fillingClass + '" src="pcmt.mp3" autoplay>').appendTo($(document.body));
+                $('<audio class="' + this.fillingClass + '" src="' + this.baseImg + 'pcmt.mp3" autoplay>').appendTo($(document.body));
             },
             eatLeft: function (length, callback, stopCallBack) {
                 var x = this.x + this.halfOfCursor, y = this.y, w = this.halfOfCursor, h = this.cursorSize;
@@ -354,11 +354,11 @@ jQuery(document).ready(function () { // wikieater egg by ymik
                 'class="' + eater.fillingClass + ' wEaterTargetCursor" ' +
                 'style="position:absolute;margin:0;padding:0;z-index:9000;cursor:pointer;' +
                 'background-color:' + eater.colors[Math.round(Math.random() * eater.colors.length * 2) % eater.colors.length] +
-                ';text-align:center;vertical-align:middle;">' +
-                '<img src="' +
+                ';text-align:center;vertical-align:middle;border:1px solid black">' +
+                '<img src="' + eater.baseImg +
                 $._wEater.img[Math.round(Math.random() * $._wEater.img.length * 2) % $._wEater.img.length] + '" ' +
                 'style="margin:0;padding:0;border:0;height:98%;max-width:98%;">' +
-                '<audio class="' + this.fillingClass + '" src="' + this.baseImg + 'pcmt.mp3" autoplay>' +
+                '<audio class="' + eater.fillingClass + '" src="' + eater.baseImg + 'pcmt.mp3" autoplay>' +
                 '</div>')
                 .appendTo($(document.body));
 
